@@ -1,0 +1,91 @@
+cmake_minimum_required (VERSION 3.25)
+set(CMAKE_CXX_STANDARD 17)
+
+project(#project_name#  LANGUAGES CXX)
+
+
+
+
+enable_testing()
+
+# Helps VSCode (and possibly other tools) to know the compilation flags for each file.
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+
+if(CONAN_EXPORTED)
+    # need for cmake_find_package to detect the packages
+    list(APPEND CMAKE_PREFIX_PATH "${CMAKE_BINARY_DIR}")
+else()
+    include(${CMAKE_SOURCE_DIR}/cmake/conan_helper.cmake)
+
+    # choose appropriate conan profile
+    set(PROJECT_CONAN_PROFILE default)
+    if(DEFINED CMAKE_TOOLCHAIN_FILE)
+        set(PROJECT_CONAN_PROFILE ms2021)
+    endif()
+
+    conan_cmake_autodetect(settings)
+
+    conan_cmake_install(
+        PATH_OR_REFERENCE ${CMAKE_SOURCE_DIR}
+        BUILD missing 
+        PROFILE ${PROJECT_CONAN_PROFILE}
+        SETTINGS ${settings})
+endif()
+
+
+find_package(nlohmann_json REQUIRED)
+find_package(httplib REQUIRED)
+
+add_library(#project_name# )
+
+target_sources(#project_name# 
+                PRIVATE
+                    "src/main.cpp")
+
+
+
+
+target_include_directories(#project_name#  
+                                   PUBLIC
+                                        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+                                        $<INSTALL_INTERFACE:include>
+                               )
+
+                               
+#Example
+if(NOT CONAN_EXPORTED)
+    add_subdirectory(example)
+    add_subdirectory(tests)
+endif()
+
+
+
+
+# include header files
+install(DIRECTORY "${PROJECT_SOURCE_DIR}/include/"
+    DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+)
+
+
+install(TARGETS #project_name#  EXPORT #project_name# SubTargets
+    LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+    ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+    INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
+)
+
+
+install(EXPORT #project_name# SubTargets
+    FILE #project_name# SubTargets.cmake
+    NAMESPACE #project_name# ::
+    DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/#project_name# "
+)
+
+
+
+
+
+
+
+
