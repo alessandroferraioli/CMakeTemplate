@@ -1,5 +1,6 @@
-# CmakeProjectGenerator
-This simple script helps you creating a _hello world_ project using the following [configuration file](configuration.json).
+# CMakeTemplate
+
+This simple script helps you creating a _hello world_ project using the following [configuration file](configuration.json). It allows you to configure the project as _libary/exectuable_ and as _conan/not conan_ project based.
 
 ## Configuration parameters
 The configuration parameters are self-explanatory.
