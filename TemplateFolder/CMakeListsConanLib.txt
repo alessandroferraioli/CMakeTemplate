@@ -34,8 +34,6 @@ else()
 endif()
 
 
-find_package(nlohmann_json REQUIRED)
-find_package(httplib REQUIRED)
 
 add_library(#project_name# )
 

@@ -85,7 +85,7 @@ if create_conan_project:
                       new_str_replace=project_name)
 
 #Copying include folder 
-shutil.copytree(include_template_path, include_project_path)
+#shutil.copytree(include_template_path, include_project_path)
 
 #Copying cmakepreset
 shutil.copy(os.path.join(template_folder_name,"CMakePresets.json"),os.path.join(project_path,"CMakePresets.json"))

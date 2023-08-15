@@ -1,8 +1,6 @@
 {
-    "project_name":"TestDefine",
+    "project_name":"TestZMQ",
     "project_directory":"C:\\Users\\ferraioli\\Desktop",
     "is_library":"false",
     "is_conan":"false"
-    
-
 }
