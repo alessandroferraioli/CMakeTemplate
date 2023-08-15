@@ -51,11 +51,7 @@ target_include_directories(#project_name#
                                )
 
                                
-#Example
-if(NOT CONAN_EXPORTED)
-    add_subdirectory(example)
-    add_subdirectory(tests)
-endif()
+
 
 
 
