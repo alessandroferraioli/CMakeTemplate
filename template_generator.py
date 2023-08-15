@@ -50,6 +50,8 @@ project_path = os.path.join(project_directory, project_name)
 create_conan_project = str2bool(config["is_conan"])
 is_library = str2bool(config["is_library"])
 
+
+
 # Template files
 cmake_file_name = "CMakeListsExe.txt"
 
@@ -59,7 +61,6 @@ else:
     cmake_file_name = "CMakeListsLib.txt" if is_library  else "CMakeListsExe.txt"
 
         
-
 cmake_template_path = os.path.join(template_folder_name, cmake_file_name) 
 src_template_path = os.path.join(template_folder_name, "src")
 include_template_path = os.path.join(template_folder_name, "include")
