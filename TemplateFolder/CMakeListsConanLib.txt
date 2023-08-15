@@ -34,8 +34,6 @@ else()
 endif()
 
 
-find_package(nlohmann_json REQUIRED)
-find_package(httplib REQUIRED)
 
 add_library(#project_name# )
 
@@ -53,11 +51,7 @@ target_include_directories(#project_name#
                                )
 
                                
-#Example
-if(NOT CONAN_EXPORTED)
-    add_subdirectory(example)
-    add_subdirectory(tests)
-endif()
+
 
 
 

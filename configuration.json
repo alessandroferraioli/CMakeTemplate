@@ -1,8 +1,6 @@
 {
-    "project_name":"TestDefine",
-    "project_directory":"C:\\Users\\ferraioli\\Desktop",
+    "project_name":"TestZMQ",
+    "project_directory":"C:\\Users\\ferraioli\\gitrepo",
     "is_library":"false",
-    "is_conan":"false"
-    
-
+    "is_conan":"true"
 }
