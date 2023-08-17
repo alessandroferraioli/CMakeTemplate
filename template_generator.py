@@ -124,5 +124,6 @@ def main():
     print("Started Template Generator")  
     config = Configuration(**json.load(open('configuration.json')))
 
+    
 if __name__ == '__main__':
     main()
