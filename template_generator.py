@@ -2,6 +2,9 @@ import os
 import shutil
 import json
 
+from configuration import Configuration,ConanPackage
+from typing import List
+
 def str2bool (val):
     """Convert a string representation of truth to true (1) or false (0).
     True values are 'y', 'yes', 't', 'true', 'on', and '1'; false values
@@ -15,6 +18,19 @@ def str2bool (val):
         return 0
     else:
         raise ValueError("invalid truth value %r" % (val,))
+    
+def generate_template_string_list(file_in_path: str, file_out_path: str, new_str_replace: List[str], str_to_be_replaced: List[str] ):
+
+    file_in = open(file_in_path, "rt")
+    file_out = open(file_out_path, "wt")
+    for line in file_in:
+        for i,old_str in str_to_be_replaced:
+            tmp_new_string = new_str_replace[i]
+        file_out.write(line.replace(old_str, tmp_new_string))
+
+    file_in.close()
+    file_out.close()
+
     
 def generate_template(file_in_path: str, file_out_path: str, new_str_replace: str, str_to_be_replaced: str = "#project_name#"):
 
@@ -101,3 +117,12 @@ generate_template(file_in_path=os.path.join(src_template_path,"main.cpp"),
                   file_out_path=os.path.join(src_project_path,"main.cpp"),
                   new_str_replace=project_name)
 
+
+
+
+def main():
+    print("Started Template Generator")  
+    config = Configuration(**json.load(open('configuration.json')))
+
+if __name__ == '__main__':
+    main()
