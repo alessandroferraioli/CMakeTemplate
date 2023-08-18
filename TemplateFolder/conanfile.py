@@ -5,7 +5,6 @@ class #project_name#Conan(ConanFile):
     name = "#project_name#"
     license = "Proprietary"
     author = "#author_email"
-    topics = ("#project_name#", "rest", "speag")
 
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
@@ -15,7 +14,7 @@ class #project_name#Conan(ConanFile):
 
     generators = "cmake", "cmake_find_package"
 
-    requires = []
+    requires = [#requires#]
 
     build_requires = ["gtest/cci.20210126"]
 
