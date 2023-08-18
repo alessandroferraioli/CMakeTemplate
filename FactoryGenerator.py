@@ -12,11 +12,11 @@ class Factory:
     def __init__(self,config:Configuration) -> None:
         self._config = config
         
-    def GetGenerator(self)->List[BaseGenerator]:
+    def GetGenerators(self)->List[BaseGenerator]:
         result : List[BaseGenerator] = []
         
         generator : BaseGenerator = None
-        if self._config.is_library:
+        if self._config.is_library == True:
             generator = CmakeGeneratorLibConan(self._config) if self._config.is_conan == True else CmakeGeneratorLib(self._config)
         else:      
             generator = CmakeGeneratorExeConan(self._config) if self._config.is_conan == True else CmakeGeneratorExe(self._config)
@@ -24,6 +24,8 @@ class Factory:
         
         result.append(generator)
         result.append(SrcGenerator(self._config))
+        
+        return result
         
         
         

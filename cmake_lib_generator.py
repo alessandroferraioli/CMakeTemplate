@@ -1,4 +1,4 @@
-from cmake_base_generator import BaseGenerator
+from base_generator import BaseGenerator
 from configuration import Configuration
 
 import os
@@ -11,7 +11,7 @@ class CmakeGeneratorLib(BaseGenerator):
         super().__init__(config)
         self._cmake_template_filename = "CMakeListsLib.txt"
         
-    def generate(self) -> bool:
+    def generate(self)->None:
         cmake_template_path = os.path.join(self._template_folder_name, self._cmake_template_filename) 
         cmake_project_path = os.path.join(self._project_path, "CMakeLists.txt")
         

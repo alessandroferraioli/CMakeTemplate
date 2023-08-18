@@ -11,7 +11,7 @@ class CmakeGeneratorLibConan(BaseGenerator):
         super().__init__(config)
         self._cmake_template_filename = "CMakeListsConanLib.txt"
         
-    def generate(self) -> bool:
+    def generate(self)->None:
         cmake_template_path = os.path.join(self._template_folder_name, self._cmake_template_filename) 
         cmake_helper_template_path = os.path.join(self._template_folder_name, "cmake")
         cmake_project_path = os.path.join(self._project_path, "CMakeLists.txt")

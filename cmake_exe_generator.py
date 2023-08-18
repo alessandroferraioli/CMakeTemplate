@@ -11,10 +11,10 @@ class CmakeGeneratorExe(BaseGenerator):
         super().__init__(config)
         self._cmake_template_filename = "CMakeListsExe.txt"
         
-    def generate(self) -> bool:
+    def generate(self)->None:
         cmake_template_path = os.path.join(self._template_folder_name, self._cmake_template_filename) 
         cmake_project_path = os.path.join(self._project_path, "CMakeLists.txt")
-        
+
         #Generating the folder
         self._folder_generator.generate(self._project_path)
         
@@ -26,6 +26,8 @@ class CmakeGeneratorExe(BaseGenerator):
         self.generate_template(file_in_path= cmake_template_path,
                                file_out_path=cmake_project_path,
                                new_str_replace=self._config.project_name)
+        
+        return True
     
         
     

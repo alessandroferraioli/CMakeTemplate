@@ -1,8 +1,8 @@
 {
-    "project_name":"TestZMQ",
+    "project_name":"Test002",
     "project_directory":"C:\\Users\\ferraioli\\gitrepo",
-    "is_library":"false",
-    "is_conan":"true",
+    "is_library":true,
+    "is_conan":false,
     "conan_dependencies":[
         {"name" : "zmq-pubsub",
         "version":"0.0.7",
