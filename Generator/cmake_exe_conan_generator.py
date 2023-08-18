@@ -1,5 +1,5 @@
-from base_generator import BaseGenerator
-from configuration import Configuration
+from Generator.base_generator import BaseGenerator
+from DataClass.configuration import Configuration
 
 import os
 import shutil

@@ -2,8 +2,8 @@ from abc import ABC,abstractmethod
 from typing import List
 import os
 
-from configuration import Configuration
-from  folder_generator import FolderGenerator
+from DataClass.configuration import Configuration
+from Generator.folder_generator import FolderGenerator
 
 class BaseGenerator(ABC):
     
