@@ -4,7 +4,7 @@ import os
 from configuration import Configuration
 from  folder_generator import FolderGenerator
 
-class CMakeBaseGenerator(metaclass=ABC):
+class BaseGenerator(metaclass=ABC):
     
     def __init__(self,config: Configuration) -> None:
         self._config = config

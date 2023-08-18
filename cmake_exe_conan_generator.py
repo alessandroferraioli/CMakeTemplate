@@ -1,11 +1,11 @@
-from cmake_base_generator import CMakeBaseGenerator
+from base_generator import BaseGenerator
 from configuration import Configuration
 
 import os
 import shutil
 
 
-class CmakeGeneratorExeCOnan(CMakeBaseGenerator):
+class CmakeGeneratorExeConan(BaseGenerator):
     
     def __init__(self,config: Configuration) -> None:
         super().__init__(config)
