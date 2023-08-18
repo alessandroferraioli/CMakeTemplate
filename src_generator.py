@@ -19,7 +19,7 @@ class SrcGenerator(BaseGenerator):
         self._folder_generator.generate(src_project_path)
         self.generate_template(file_in_path= template_path,
                                file_out_path=file_project_path,
-                               new_str_replace=self._config.project_name)
+                               new_str_replace=[self._config.project_name])
     
         
     

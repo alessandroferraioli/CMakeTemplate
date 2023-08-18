@@ -14,7 +14,7 @@ class #project_name#Conan(ConanFile):
 
     generators = "cmake", "cmake_find_package"
 
-    #requires#
+    requires = [#requires#]
 
     build_requires = ["gtest/cci.20210126"]
 

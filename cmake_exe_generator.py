@@ -25,7 +25,7 @@ class CmakeGeneratorExe(BaseGenerator):
 
         self.generate_template(file_in_path= cmake_template_path,
                                file_out_path=cmake_project_path,
-                               new_str_replace=self._config.project_name)
+                               new_str_replace=[self._config.project_name])
         
         return True
     

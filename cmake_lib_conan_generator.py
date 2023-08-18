@@ -21,10 +21,11 @@ class CmakeGeneratorLibConan(BaseGenerator):
         
         shutil.copytree(cmake_helper_template_path, cmake_helper_template_path)
         
-        #TODO : Manage dependencies
+        str_dep = self._config.getDependenciesString()
+        
         self.generate_template(file_in_path=os.path.join(self._template_folder_name,"conanfile.py"),
                       file_out_path=os.path.join(self._project_path,"conanfile.py"),
-                      new_str_replace=self._config.project_name)
+                      new_str_replace=[self._config.project_name,str_dep],str_to_be_replaced=["#project_name#","#requires#"])
         
         #Copying Presets
         shutil.copy(os.path.join(self._template_folder_name,"CMakePresets.json"),os.path.join(self._project_path,"CMakePresets.json"))
@@ -32,7 +33,7 @@ class CmakeGeneratorLibConan(BaseGenerator):
 
         self.generate_template(file_in_path= cmake_template_path,
                                file_out_path=cmake_project_path,
-                               new_str_replace=self._config.project_name)
+                               new_str_replace=[self._config.project_name])
     
         
     
