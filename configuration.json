@@ -1,13 +1,10 @@
 {
-    "project_name":"Test006",
-    "project_directory":"C:\\Users\\ferraioli\\gitrepo",
+    "project_name":"TestExeConan",
+    "project_directory":"C:\\Users\\ferraioli\\Desktop",
+    "author_email":"test@email.com",
     "is_library":false,
     "is_conan":true,
     "conan_dependencies":[
-        {"name" : "zmq-pubsub",
-        "version":"0.0.7",
-        "path":"@speag/testing"
-        },
         {"name" : "nlohmann_json",
         "version":"3.11.2",
         "path":""

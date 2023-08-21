@@ -4,7 +4,7 @@ from conans import ConanFile, CMake, tools
 class #project_name#Conan(ConanFile):
     name = "#project_name#"
     license = "Proprietary"
-    author = "#author_email"
+    author = "#author_email#"
 
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}

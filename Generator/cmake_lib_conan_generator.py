@@ -25,7 +25,7 @@ class CmakeGeneratorLibConan(BaseGenerator):
         
         self.generate_template(file_in_path=os.path.join(self._template_folder_name,"conanfile.py"),
                       file_out_path=os.path.join(self._project_path,"conanfile.py"),
-                      new_str_replace=[self._config.project_name,str_dep],str_to_be_replaced=["#project_name#","#requires#"])
+                      new_str_replace=[self._config.project_name,str_dep,self._config.author_email],str_to_be_replaced=["#project_name#","#requires#","#author_email#"])
         
         #Copying Presets
         shutil.copy(os.path.join(self._template_folder_name,"CMakePresets.json"),os.path.join(self._project_path,"CMakePresets.json"))
