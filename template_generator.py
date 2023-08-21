@@ -1,10 +1,8 @@
-import os
-import shutil
 import json
 
-from configuration import Configuration
-from base_generator import BaseGenerator
-from FactoryGenerator import Factory
+from DataClass.configuration import Configuration
+from Generator.base_generator import BaseGenerator
+from Generator.FactoryGenerator import Factory
 from typing import List
 
 

@@ -1,10 +1,10 @@
-from base_generator import BaseGenerator
-from cmake_exe_conan_generator import CmakeGeneratorExeConan
-from cmake_exe_generator import CmakeGeneratorExe
-from cmake_lib_conan_generator import CmakeGeneratorLibConan
-from cmake_lib_generator import CmakeGeneratorLib
-from src_generator import SrcGenerator
-from configuration import Configuration
+from Generator.base_generator import BaseGenerator
+from Generator.cmake_exe_conan_generator import CmakeGeneratorExeConan
+from Generator.cmake_exe_generator import CmakeGeneratorExe
+from Generator.cmake_lib_conan_generator import CmakeGeneratorLibConan
+from Generator.cmake_lib_generator import CmakeGeneratorLib
+from Generator.src_generator import SrcGenerator
+from DataClass.configuration import Configuration
 
 from typing import List
 class Factory:

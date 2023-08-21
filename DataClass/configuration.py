@@ -21,6 +21,7 @@ class ConanPackage:
 class Configuration:
     project_name:str
     project_directory:str
+    author_email:str
     is_library:bool
     is_conan:bool
     conan_dependencies:List[ConanPackage]
