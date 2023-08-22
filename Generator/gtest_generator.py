@@ -19,7 +19,7 @@ class GTestGenerator(BaseGenerator):
         self._file_manager.create_folder(test_project_path)
         self._file_manager.copy_file(template_path,file_project_path)
         self._file_manager.copy_file(os.path.join(test_template_path,"main.cpp"),os.path.join(test_project_path,"main.cpp"))
-        self.generate_template(os.path.join(test_template_path,"CMakeLists.txt"),os.path.join(test_project_path,"CMakeLists.txt"),self._project_name)
+        self.generate_template(os.path.join(test_template_path,"CMakeLists.txt"),os.path.join(test_project_path,"CMakeLists.txt"),[self._project_name])
     
         
     
