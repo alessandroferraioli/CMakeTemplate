@@ -3,7 +3,7 @@ from typing import List
 import os
 
 from DataClass.configuration import Configuration
-from Generator.folder_generator import FolderGenerator
+from Generator.file_manager import FileManager
 
 class BaseGenerator(ABC):
     
@@ -14,7 +14,7 @@ class BaseGenerator(ABC):
         self._project_directory =  config.project_directory
         self._project_path = os.path.join(self._project_directory,self._project_name)
         
-        self._folder_generator = FolderGenerator()
+        self._file_manager = FileManager()
         
     @abstractmethod 
     def generate(self)->None:

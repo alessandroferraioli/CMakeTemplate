@@ -16,7 +16,7 @@ class CmakeGeneratorExe(BaseGenerator):
         cmake_project_path = os.path.join(self._project_path, "CMakeLists.txt")
 
         #Generating the folder
-        self._folder_generator.generate(self._project_path)
+        self._file_manager.create_folder(self._project_path)
         
         
         #Copying Presets
