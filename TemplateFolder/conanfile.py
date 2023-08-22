@@ -16,8 +16,7 @@ class #project_name#Conan(ConanFile):
 
     requires = [#requires#]
 
-    build_requires = ["gtest/cci.20210126"]
-
+    #build_requires#
 
     exports_sources = ["src*", "include*", "CMakeLists.txt"]
 
