@@ -18,8 +18,8 @@ class CmakeGeneratorExeConan(BaseGenerator):
         cmake_project_path = os.path.join(self._project_path, "CMakeLists.txt")
         
         #Generating the folder
-        self._folder_generator.generate(self._project_path)
-        self._folder_generator.generate(os.path.join(self._project_path,"cmake"))
+        self._file_manager.create_folder(self._project_path)
+        self._file_manager.create_folder(os.path.join(self._project_path,"cmake"))
 
         shutil.copy(cmake_helper_template_path,cmake_helper_project_path)
         

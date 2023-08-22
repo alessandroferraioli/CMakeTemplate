@@ -1,7 +1,6 @@
 from Generator.base_generator import BaseGenerator
 from DataClass.configuration import Configuration
 import os
-import shutil
 
 
 class SrcGenerator(BaseGenerator):
@@ -16,7 +15,7 @@ class SrcGenerator(BaseGenerator):
         src_project_path = os.path.join(self._project_path, "src")
         file_project_path = os.path.join(src_project_path, "main.cpp")
 
-        self._folder_generator.generate(src_project_path)
+        self._file_manager.create_folder(src_project_path)
         self.generate_template(file_in_path= template_path,
                                file_out_path=file_project_path,
                                new_str_replace=[self._config.project_name])

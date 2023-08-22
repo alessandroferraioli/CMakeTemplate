@@ -24,6 +24,7 @@ class Configuration:
     author_email:str
     is_library:bool
     is_conan:bool
+    use_gtest:bool
     conan_dependencies:List[ConanPackage]
     
     

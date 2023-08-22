@@ -4,6 +4,7 @@
     "author_email":"test@email.com",
     "is_library":false,
     "is_conan":true,
+    "use_gtest":true,
     "conan_dependencies":[
         {"name" : "nlohmann_json",
         "version":"3.11.2",
